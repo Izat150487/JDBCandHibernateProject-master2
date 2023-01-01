@@ -11,13 +11,13 @@ public class UserDaoJdbcImpl implements UserDao {
 
     public UserDaoJdbcImpl() {
     }
-
+//Таблица тузуп жатканда age byte тибинде демек таблицада INT эмес  SMALLINT  болуш керек
     public void createUsersTable() {
         String SQL = "CREATE TABLE IF NOT EXISTS users(" +
                 "id SERIAL PRIMARY KEY," +
                 "name VARCHAR(40) NOT NULL," +
                 "lastName VARCHAR(40) NOT NULL," +
-                "age INT);";
+                "age SMALLINT);";
         try (Connection connection = Util.connection();
              Statement statement = connection.createStatement()) {
             statement.executeUpdate(SQL);
