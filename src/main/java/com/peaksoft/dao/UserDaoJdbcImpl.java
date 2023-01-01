@@ -11,7 +11,7 @@ public class UserDaoJdbcImpl implements UserDao {
 
     public UserDaoJdbcImpl() {
     }
-//Таблица тузуп жатканда age byte тибинде демек таблицада INT эмес  SMALLINT  болуш керек
+
     public void createUsersTable() {
         String SQL = "CREATE TABLE IF NOT EXISTS users(" +
                 "id SERIAL PRIMARY KEY," +
