@@ -7,7 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="JDBCandHibernateProject" />
-        <module name="JDBCandHibernateProject-master" />
+        <module name="JDBCandHibernateProject-master2" />
       </profile>
     </annotationProcessing>
   </component>

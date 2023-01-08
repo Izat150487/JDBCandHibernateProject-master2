@@ -1,19 +1,21 @@
 package com.peaksoft.model;
 
 import javax.persistence.*;
+@Entity
+@Table(name = "users")
 
-@Table
 public class User {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column
+    @Column(name = "users_name")
     private String name;
 
-    @Column
+    @Column(name = "last_name")
     private String lastName;
 
-    @Column
+    @Column(name = "users_age")
     private Byte age;
 
     public User() {
