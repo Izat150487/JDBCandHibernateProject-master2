@@ -26,7 +26,7 @@ public class Util {
                 settings.put(Environment.PASS,"izi12345");
                 settings.put(Environment.DIALECT,"org.hibernate.dialect.PostgreSQLDialect");
                 settings.put(Environment.SHOW_SQL,"true");
-                settings.put(Environment.HBM2DDL_AUTO,"validate");//validate //create
+                settings.put(Environment.HBM2DDL_AUTO,"create");//validate //create
 
                 configuration.setProperties(settings);
 

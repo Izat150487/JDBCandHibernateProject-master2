@@ -21,8 +21,8 @@ public class UserDaoHibernateImpl implements UserDao {
     public void createUsersTable() {
         String SQL = "CREATE TABLE IF NOT EXISTS users(" +
                 "id BIGSERIAL PRIMARY KEY," +
-                "name VARCHAR(50)," +
-                "last_name VARCHAR(50)," +
+                "name VARCHAR(255)," +
+                "last_name VARCHAR(255)," +
                 "age SMALLINT);";
         try {
             Session session = Util.getSessionFactory().openSession();
@@ -69,7 +69,8 @@ public class UserDaoHibernateImpl implements UserDao {
         try {
             Session session = Util.getSessionFactory().openSession();
             Transaction transaction = session.beginTransaction();
-            session.createSQLQuery("delete from  users where id = "+id).executeUpdate();
+            User user = session.get(User.class,id);
+            session.delete(user);
             transaction.commit();
             System.out.println(id + " " + "удален пользователь с id");
         } catch (Exception e) {
@@ -79,17 +80,19 @@ public class UserDaoHibernateImpl implements UserDao {
 
     @Override
     public List<User> getAllUsers() {
+
+        List<User> userList =null;
+
         try {
             Session session = Util.getSessionFactory().openSession();
             session.beginTransaction();
-            List<User> userList = session.createQuery("from User").list();
+            userList=session.createQuery("from User").list();
             session.getTransaction().commit();
             session.close();
-            return userList;
         }catch (Exception r){
             System.out.println(r.getMessage());
         }
-        return null;
+        return userList;
     }
 
     @Override

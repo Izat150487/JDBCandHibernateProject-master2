@@ -13,7 +13,6 @@ public class App {
           UserDaoJdbcImpl userDaoJdbc = new UserDaoJdbcImpl();
 
 
-//        userDaoJdbc.createUsersTable();
 
 
 //         userDaoJdbc.saveUser("Elzat", "Sadykov",(byte) 27);
